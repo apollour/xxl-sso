@@ -22,6 +22,7 @@ public class XxlSsoConfig implements InitializingBean, DisposableBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         SsoLoginStore.setRedisExpireMinute(redisExpireMinute);
+
         JedisUtil.init(redisAddress);
     }
 

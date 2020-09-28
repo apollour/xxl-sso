@@ -82,6 +82,7 @@ public class JedisUtil {
                             String[] addressArr = address.split(",");
                             for (int i = 0; i < addressArr.length; i++) {
                                 JedisShardInfo jedisShardInfo = new JedisShardInfo(addressArr[i]);
+                                jedisShardInfo.setPassword("123456");
                                 jedisShardInfos.add(jedisShardInfo);
                             }
                             shardedJedisPool = new ShardedJedisPool(config, jedisShardInfos);
